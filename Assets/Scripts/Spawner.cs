@@ -1,11 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Security.Cryptography;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    
+
     [Tooltip("The Prefab to be spawned into the scene.")]
     public GameObject spawnPrefab = null;
 
@@ -28,7 +25,7 @@ public class Spawner : MonoBehaviour
         nextSpawn += Time.deltaTime;
 
         // if time to spawn
-        if (nextSpawn>spawnTime)
+        if (nextSpawn > spawnTime)
         {
             // Spawn the gameObject at the spawners current position and rotation
             GameObject projectileGameObject = Instantiate(spawnPrefab, transform.position, transform.rotation, null);

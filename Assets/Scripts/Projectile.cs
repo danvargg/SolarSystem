@@ -1,13 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// A class to make projectiles move
 /// </summary>
 public class Projectile : MonoBehaviour
 {
-    
+
     [Tooltip("The distance this projectile will move each second in meters.")]
     public float projectileSpeed = 3.0f;
 
@@ -39,12 +37,12 @@ public class Projectile : MonoBehaviour
     {
         // move the transform
         transform.position = transform.position + transform.forward * projectileSpeed * Time.deltaTime;
-        
+
         // calculate the distance from the main camera
         float dist = Vector3.Distance(Camera.main.transform.position, transform.position);
 
         // if the distance is greater than the destroyDistance
-        if (dist>destroyDistance)
+        if (dist > destroyDistance)
         {
             Destroy(this.gameObject); // destroy the gameObject
         }
